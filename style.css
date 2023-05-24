@@ -1,4 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap');
 
+:root {
+  --font-text: 'Permanent Marker', cursive;
+  --font-text2: 'Bruno Ace', cursive;
+}
 
 html {
   box-sizing: border-box;
@@ -10,7 +16,7 @@ body {
   overflow-y: hidden;
   display: flex;
   align-items: center;
-
+  font-family: var(--font-text2);
 }
 
 /* Video Background */
@@ -49,7 +55,7 @@ video {
   z-index: 2;
   display: flex;
   justify-content: center;
-
+  background-color: rgba(255, 255, 255, 0.85);
 }
 
 .input-container {
@@ -58,7 +64,7 @@ video {
 }
 
 h1 {
-  font-size: 35px;
+  font-size: 45px;
   text-align: center;
   margin-top: 0;
   margin-bottom: 10px;
@@ -82,7 +88,12 @@ input {
   border-radius: 20px;
   background: #fff;
   outline: none;
+  font-family: var(--font-text);
+  letter-spacing: 2px;
+}
 
+input:hover {
+  cursor: pointer;
 }
 
 /* Button */
@@ -97,9 +108,13 @@ button {
   color: white;
   cursor: pointer;
   outline: none;
+  font-family: var(--font-text2);
 }
 
-
+button:hover {
+  filter: brightness(1.5);
+  letter-spacing: 2px;
+}
 
 /* Countdown */
 ul {
@@ -107,17 +122,19 @@ ul {
 }
 
 li {
-
+  display: inline-block;
   font-size: 30px;
   list-style-type: none;
   padding: 10px;
   text-transform: uppercase;
+  font-family: var(--font-text);
 }
 
 li span {
   display: block;
   font-size: 80px;
   text-align: center;
+  font-family: var(--font-text2);
 }
 
 /* Complete */
@@ -126,6 +143,36 @@ li span {
   top: 60px;
 }
 
+.complete-title {
+  animation: complete 4s infinite;
+}
+
+@keyframes complete {
+  0% {
+    color: rgb(206, 38, 38);
+}
+
+  25% {
+    color: rgb(188, 188, 18);
+    letter-spacing: 3px;
+  }
+
+  50% {
+    color: rgb(29, 188, 29);
+    transform: scale(1.25);
+    letter-spacing: 6px;
+  }
+
+  75% {
+    color: rgb(34, 34, 202);
+    letter-spacing: 3px;
+  }
+
+  100% {
+    color: rgb(187, 36, 187);
+}
+
+}
 
 /* Media Query: Large Smartphone (Vertical) */
 @media screen and (max-width: 1920px) {
@@ -141,10 +188,11 @@ li span {
   }
 
   .container {
-
+    min-width: unset;
+    width: 80vw;
     min-height: 245px;
     padding: 20px;
-    margin: 10px;
+    margin: 10vw;
   }
 
   .input-container {
@@ -165,7 +213,7 @@ li span {
   }
 
   h1 {
-    font-size: 20px;
+    font-size: 30px;
   }
 
   li {
