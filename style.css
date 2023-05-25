@@ -25,7 +25,7 @@ body {
   right: 0;
   bottom: 0;
   width: 100vw;
-  height: auto;
+  height: 100vh;
 }
 
 video {
@@ -33,6 +33,7 @@ video {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  object-fit: cover;
 }
 
 .video-overlay {
@@ -46,22 +47,23 @@ video {
 
 /* Container */
 .container {
-  min-width: 580px;
+  max-width: 580px;
   min-height: 304px;
   color: black;
   margin: 0 auto;
-  padding: 25px 50px;
-  border-radius: 5px;
+  padding: 0 50px 25px 50px;
+  border-radius: 25px;
   z-index: 2;
   display: flex;
   justify-content: center;
   background-color: rgba(255, 255, 255, 0.85);
-  
+  box-shadow: inset 5px -5px 50px 5px rgba(137, 88, 88, 0.5);
 }
 
 .input-container {
   position: relative;
-  top: 20px;
+  top: 10px;
+  margin: 0 auto;
 }
 
 h1 {
@@ -73,9 +75,8 @@ h1 {
 
 /* Form */
 .form {
-  width: 480px;
   text-align: center;
-  
+  margin: 0 auto;
 }
 
 label {
@@ -105,10 +106,10 @@ input:hover {
 
 /* Button */
 button {
-  width: 100%;
+  width: 95%;
   height: 40px;
   border-radius: 20px;
-  margin-top: 15px;
+  margin: 15px;
   border: none;
   text-transform: uppercase;
   background: #006959;
@@ -121,6 +122,7 @@ button {
 button:hover {
   filter: brightness(1.5);
   letter-spacing: 2px;
+  transform: scaley(1.35) scaleX(0.85);
 }
 
 /* Countdown */
@@ -182,12 +184,7 @@ li span {
 }
 
 /* Media Query: Large Smartphone (Vertical) */
-@media screen and (max-width: 1920px) {
-  .video-background {
-    height: 100vh;
-    width: 100vw;
-  }
-  
+@media screen and (max-width: 720px) {
   video {
     object-fit: cover;
     object-position: 70%;
@@ -195,8 +192,8 @@ li span {
   }
 
   .container {
-    min-width: unset;
-    width: 80vw;
+    min-width: 70vw;
+    max-width: 580px;
     min-height: 245px;
     padding: 20px;
     margin: 10vw;
